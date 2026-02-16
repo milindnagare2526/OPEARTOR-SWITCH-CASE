@@ -1,28 +1,41 @@
+// JavaScript Calculator using Switch Case (Node.js Version)
 
-let num1 = parseFloat(prompt("Enter first number:"));
-let num2 = parseFloat(prompt("Enter second number:"));
-let operator = prompt("Enter operator (+, -, *):");
+const readline = require("readline");
 
-let result;
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-switch (operator) {
-    case "+":
-        result = num1 + num2;
-        console.log("Addition: " + result);
-        break;
+rl.question("Enter first number: ", function(num1) {
+    rl.question("Enter second number: ", function(num2) {
+        rl.question("Enter operator (+, -, *): ", function(operator) {
 
-    case "-":
-        result = num1 - num2;
-        console.log("Subtraction: " + result);
-        break;
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            let result;
 
-    case "*":
-        result = num1 * num2;
-        console.log("Multiplication: " + result);
-        break;
+            switch(operator) {
+                case "+":
+                    result = num1 + num2;
+                    console.log("Addition = " + result);
+                    break;
 
-    default:
-        console.log("Invalid operator");
-}
+                case "-":
+                    result = num1 - num2;
+                    console.log("Subtraction = " + result);
+                    break;
 
-alert("Result: " + result);
+                case "*":
+                    result = num1 * num2;
+                    console.log("Multiplication = " + result);
+                    break;
+
+                default:
+                    console.log("Invalid Operator");
+            }
+
+            rl.close();
+        });
+    });
+});
