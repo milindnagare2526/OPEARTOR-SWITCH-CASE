@@ -1,6 +1,4 @@
-// JavaScript Program for Arithmetic Operations using Switch Case
 
-// Taking input from user
 let num1 = parseFloat(prompt("Enter first number:"));
 let num2 = parseFloat(prompt("Enter second number:"));
 let operator = prompt("Enter operator (+, -, *):");
